@@ -10,10 +10,30 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    .btn, .primary-cta, .secondary-cta {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-link {
+        padding: 10px 0;
+    }
+    
+    .hamburger {
+        padding: 10px;
+    }
 }
 
 .container {
@@ -815,38 +835,61 @@ section {
 @media (max-width: 768px) {
     .showcase-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
     
     .showcase-card {
-        padding: 25px;
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .showcase-video {
+        height: auto;
+        min-height: 250px;
+        max-height: 300px;
+    }
+    
+    .video-preview {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .section-header h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        text-align: center;
     }
     
     .services-badges {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
     }
     
     .badge {
-        font-size: 0.8rem;
-        padding: 6px 15px;
+        font-size: 0.75rem;
+        padding: 5px 12px;
     }
     
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
     
     .primary-cta, .secondary-cta {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
     
     .testimonials {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -1420,34 +1463,118 @@ section {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 10px;
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
     .hero-text h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
 
     .hero-image img {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .showcase-card {
+        padding: 15px;
+        margin: 0 5px;
+    }
+
+    .showcase-video {
+        min-height: 200px;
+        max-height: 250px;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+
+    .primary-cta, .secondary-cta {
+        max-width: 100%;
+        padding: 10px 15px;
+        font-size: 0.85rem;
     }
 
     .project-card,
     .service-card,
     .insight-card {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .nav-menu {
+        top: 60px;
+        padding: 1.5rem 0;
+    }
+
+    .navbar {
+        padding: 0.8rem 0;
+    }
+}
+
+/* Extra Small Devices (320px and below) */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 8px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .showcase-card {
+        padding: 12px;
+        margin: 0;
+    }
+
+    .showcase-video {
+        min-height: 180px;
+        max-height: 220px;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .primary-cta, .secondary-cta {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .badge {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+    }
+
+    .hero-image img {
+        width: 180px;
+        height: 180px;
     }
 }
